@@ -1,0 +1,26 @@
+---
+- name: add APT repository
+  apt_repository: repo='deb https://oss-binaries.phusionpassenger.com/apt/passenger xenial main'
+- name: add repository key
+  apt_key: keyserver=keyserver.ubuntu.com id=561F9B9CAC40B2F7
+- name: install Phusion Passenger
+  apt: pkg={{ item }} state=latest update_cache=yes
+  with_items:
+    - nginx-extras
+    - passenger
+- name: adjust Nginx configuration
+  template: src=nginx.conf dest=/etc/nginx/nginx.conf owner=root group=root
+  notify: restart nginx
+- name: disable `default` configuration
+  file: src=/etc/nginx/sites-available/default dest=/etc/nginx/sites-enabled/default state=absent
+  notify: reload nginx
+- name: configure a virtual host for the test application
+  template:
+    src: app.conf
+    dest: /etc/nginx/sites-available/app
+  notify: restart nginx
+- name: enable a virtual host for the test application
+  file:
+    src: /etc/nginx/sites-available/app
+    dest: /etc/nginx/sites-enabled/app
+    state: link
