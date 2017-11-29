@@ -6,6 +6,7 @@
     - gnupg 
     - apt-transport-https 
     - ca-certificates
+    - nginx
 - name: add repository key
   apt_key: keyserver=keyserver.ubuntu.com id=561F9B9CAC40B2F7
 - name: add APT repository
