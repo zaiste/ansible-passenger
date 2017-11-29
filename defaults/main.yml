@@ -1,4 +1,6 @@
 ---
+dist: artful
+
 nginx_worker_connections: 768
 nginx_keepalive_timeout: 65
 nginx_server_names_hash_bucket_size: 64

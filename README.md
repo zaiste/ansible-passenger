@@ -1,7 +1,7 @@
 ansible-passenger
 =========
 
-Ansible role that installs Phusion Passenger for Ubuntu Xenial from the official APT.
+Ansible role that installs Phusion Passenger for Ubuntu from the official APT.
 
 Requirements
 ------------
@@ -10,6 +10,8 @@ None.
 
 Role Variables
 --------------
+
+- `dist` defaults to `artful`
 
 - `nginx_worker_connections` defaults to `768`;
 - `nginx_keepalive_timeout` defaults to `65`;
@@ -39,4 +41,4 @@ MIT / BSD
 Author Information
 ------------------
 
-[Zaiste](http://zaiste.net) 2014 - 2016
+[Zaiste](http://zaiste.net) 2017 
