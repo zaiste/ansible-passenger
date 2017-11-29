@@ -7,12 +7,13 @@
     - apt-transport-https 
     - ca-certificates
     - nginx
+    - nginx-extras
 - name: add repository key
   apt_key: keyserver=keyserver.ubuntu.com id=561F9B9CAC40B2F7
 - name: add APT repository
   apt_repository: repo='deb https://oss-binaries.phusionpassenger.com/apt/passenger {{ dist }} main'
 - name: install Phusion Passanger
-  apt: name=libnginx-mod-http-passenger state=latest
+  apt: name=passenger state=latest
 - name: adjust Nginx configuration
   template: src=nginx.conf dest=/etc/nginx/nginx.conf owner=root group=root
   notify: restart nginx
