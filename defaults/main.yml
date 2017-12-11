@@ -8,3 +8,6 @@ nginx_server_name: app.example.com
 
 passenger_app_env: production
 passenger_app_root: /srv/app/public
+passenger_app_vars:
+- name: FOO
+  value: bar
