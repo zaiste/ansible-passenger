@@ -1,5 +1,6 @@
 ---
 dist: artful
+nginx: core
 
 nginx_worker_connections: 768
 nginx_keepalive_timeout: 65

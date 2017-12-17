@@ -1,17 +1,17 @@
-ansible-passenger
-=========
+# ansible-passenger
 
-Ansible role that installs Phusion Passenger for Ubuntu from the official APT.
+[![Ansible Galaxy](https://img.shields.io/badge/galaxy-zaiste.passenger-2993bd.svg?style=for-the-badge)](https://galaxy.ansible.com/zaiste/passenger/)
 
-Requirements
-------------
+Simple, no fluff Ansible role that installs Phusion Passenger for Ubuntu from the official APT.
+
+## Requirements
 
 None.
 
-Role Variables
---------------
+## Role Variables
 
 - `dist` defaults to `artful`
+- `nginx` defaults to `core`
 
 - `nginx_worker_connections` defaults to `768`;
 - `nginx_keepalive_timeout` defaults to `65`;
@@ -22,29 +22,22 @@ Role Variables
 - `passenger_app_root` defaults to `/srv/app/public`
 - `passenger_app_vars` is a list of `name` and `value` pairs
 
-Dependencies
-------------
+## Dependencies
 
 None.
 
-Example Playbook
-----------------
+## Example Playbook
 
 ```
 - hosts: servers
   roles:
   - role: zaiste.passenger
+    nginx: extras
     passenger_app_vars:
     - name: RAILS_ENV
       value: production
 ```
 
-License
--------
-
-MIT / BSD
-
-Author Information
-------------------
+## Author Information
 
 [Zaiste](http://zaiste.net) 2017 
