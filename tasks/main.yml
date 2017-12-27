@@ -14,14 +14,18 @@
 - name: install Phusion Passanger
   apt: name=libnginx-mod-http-passenger state=latest
 - name: adjust Nginx configuration
-  template: src=nginx.conf dest=/etc/nginx/nginx.conf owner=root group=root
+  template: 
+    src: "{{ config }}"
+    dest: /etc/nginx/nginx.conf 
+    owner: root 
+    group: root
   notify: restart nginx
 - name: disable `default` configuration
   file: src=/etc/nginx/sites-available/default dest=/etc/nginx/sites-enabled/default state=absent
   notify: reload nginx
 - name: configure a virtual host for the test application
   template:
-    src: app.conf
+    src: "{{ vhost_config }}"
     dest: /etc/nginx/sites-available/app
   notify: restart nginx
 - name: enable a virtual host for the test application

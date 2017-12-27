@@ -7,6 +7,9 @@ nginx_keepalive_timeout: 65
 nginx_server_names_hash_bucket_size: 64
 nginx_server_name: app.example.com
 
+config: default-nginx.conf
+vhost_config: default-app.conf
+
 passenger_app_env: production
 passenger_app_root: /srv/app/public
 passenger_app_vars:
