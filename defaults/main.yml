@@ -1,5 +1,5 @@
 ---
-dist: artful
+dist: bionic
 nginx: core
 
 nginx_worker_connections: 768

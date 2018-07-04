@@ -10,7 +10,7 @@ None.
 
 ## Role Variables
 
-- `dist` defaults to `artful`
+- `dist` defaults to `bionic`
 - `nginx` defaults to `core`
 
 - `nginx_worker_connections` defaults to `768`;
@@ -40,4 +40,4 @@ None.
 
 ## Author Information
 
-[Zaiste](http://zaiste.net) 2017 
+[Zaiste](http://zaiste.net) 2018

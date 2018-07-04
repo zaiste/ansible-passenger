@@ -1,6 +1,6 @@
 galaxy_info:
   author: Zaiste
-  description: Ansible role that installs Phusion Passenger for Ubuntu Xenial from the official APT.
+  description: Ansible role that installs Phusion Passenger for Ubuntu 18.04 (Bionic Beaver) using the official APT.
   company: Nukomeet
 
   # If the issue tracker for your role is not on github, uncomment the
@@ -134,7 +134,7 @@ galaxy_info:
   #  - 9.3
   - name: Ubuntu
     versions:
-  #  - all
+    - all
   #  - lucid
   #  - maverick
   #  - natty
@@ -147,7 +147,7 @@ galaxy_info:
   #  - utopic
   #  - vivid
   #  - wily
-    - xenial
+  #  - xenial
   #- name: SLES
   #  versions:
   #  - all
